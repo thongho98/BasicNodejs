@@ -9,3 +9,6 @@
 
 //Cài database nhỏ nhỏ để demo thôi lowdb
 //npm install lowdb
+
+//Dinh nghia nhieu hàm trong module.exports trong controller
+https://stackoverflow.com/questions/16631064/declare-multiple-module-exports-in-node-js
