@@ -33,7 +33,7 @@ app.get('/users',function(request,reponse) {
 //Còn chưa fix
 app.get('/users/search',function(request,reponse) {
     var q = request.query.q;
-    var matchedUsers = db.get('users').filter(function(user){
+    var matchedUsers = db.get('users').value().filter(function(user){
         return user.name.toLowerCase().indexOf(q.toLowerCase()) !== -1;
     });
 
