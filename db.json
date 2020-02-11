@@ -1,0 +1,14 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Hồ Quốc Thông",
+      "phone": "123"
+    },
+    {
+      "id": 2,
+      "name": "Mousai Chardonnay 2017",
+      "phone": "123333"
+    }
+  ]
+}

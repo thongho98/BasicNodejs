@@ -1,0 +1,11 @@
+//Cài body-parser để đọc dữ liệu từ client để lên dưới dạng Object
+// npm install body-parser --save
+
+//Trong package.json thêm ngay scripts "start":"nodemon index.js",
+// npm start
+
+//Cài nodemon để k cần phải chạy lại server
+//npm install --save-dev nodemon
+
+//Cài database nhỏ nhỏ để demo thôi lowdb
+//npm install lowdb
