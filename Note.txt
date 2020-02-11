@@ -12,3 +12,8 @@
 
 //Dinh nghia nhieu hàm trong module.exports trong controller
 https://stackoverflow.com/questions/16631064/declare-multiple-module-exports-in-node-js
+
+//static file
+https://expressjs.com/en/starter/static-files.html 
+
+//Tip: Nếu lable (for="name") và input id="name" thì khi bấm vào label thì sẽ xuống input

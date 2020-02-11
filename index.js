@@ -15,6 +15,8 @@ app.set('views','./views');
 app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 
+app.use(express.static('public'));
+
 app.get('/',function(request,reponse) {
     reponse.render('index',{
         name: 'THONG'
