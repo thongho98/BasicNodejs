@@ -4,6 +4,7 @@ var bodyParser = require('body-parser');
 var port = 3333;
 //Lowdb
 const low = require('lowdb');
+const shortid = require('shortid')
 const FileSync = require('lowdb/adapters/FileSync');
 const adapter = new FileSync('db.json');
 const db = low(adapter);
@@ -30,7 +31,7 @@ app.get('/users',function(request,reponse) {
     });
 });
 
-//Còn chưa fix
+
 app.get('/users/search',function(request,reponse) {
     var q = request.query.q;
     var matchedUsers = db.get('users').value().filter(function(user){
@@ -50,7 +51,8 @@ app.get('/users/create',function(request,reponse) {
 //Cài body-parser để đọc dữ liệu từ client để lên dưới dạng Object
 // npm install body-parser --save
 app.post('/users/create',function(req,res) {
-    console.log(req.body);
+    //Tao ra id đưa vào body
+    req.body.id = shortid.generate();
     db.get('users').push(req.body).write();
     res.redirect("/users");
 });
@@ -64,3 +66,15 @@ app.listen(port,function(){
 
 //Cài database nhỏ nhỏ để demo thôi lowdb
 //npm install lowdb
+
+
+//View từng user
+app.get('/users/:id',function(req,res) {
+    var id = req.params.id;
+    var user = db.get('users').find({id : id}).value();
+    res.render('users/viewUser',{
+        user: user
+    });
+});
+
+//Sửa lại code 1 tí để tạo ra id bằng shortid lowdb
