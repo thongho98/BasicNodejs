@@ -4,8 +4,8 @@ var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 
 //Thư viện tự tạo
-//var db = require('./db');
 var userRoute = require('./routes/user.route');
+var authRoute = require('./routes/auth.route');
 
 var app = express();
 var port = 3333;
@@ -25,6 +25,7 @@ app.get('/',function(request,reponse) {
 });
 
 app.use('/users',userRoute);
+app.use('/auth',authRoute);
 
 app.listen(port,function(){
     console.log('Server is running at port '+port);
