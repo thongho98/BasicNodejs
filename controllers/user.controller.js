@@ -19,6 +19,7 @@ module.exports = {
         });
     },
     formCreateUser : function(req,res) {
+        console.log(req.cookies);
         res.render('users/create');
     },
     createUser : function(req,res) {

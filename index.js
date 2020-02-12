@@ -1,6 +1,7 @@
 //Thu viện ở ngoài
 var express = require('express');
 var bodyParser = require('body-parser');
+var cookieParser = require('cookie-parser');
 
 //Thư viện tự tạo
 //var db = require('./db');
@@ -14,7 +15,7 @@ app.set('views','./views');
 
 app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
-
+app.use(cookieParser());
 app.use(express.static('public'));
 
 app.get('/',function(request,reponse) {
