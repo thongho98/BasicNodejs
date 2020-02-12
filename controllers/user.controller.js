@@ -24,6 +24,7 @@ module.exports = {
     createUser : function(req,res) {
         //Tao ra id đưa vào body
         req.body.id = shortid.generate();
+        console.log(res.locals);
         db.get('users').push(req.body).write();
         res.redirect("/users");
     },

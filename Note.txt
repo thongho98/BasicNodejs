@@ -17,3 +17,6 @@ https://stackoverflow.com/questions/16631064/declare-multiple-module-exports-in-
 https://expressjs.com/en/starter/static-files.html 
 
 //Tip: Nếu lable (for="name") và input id="name" thì khi bấm vào label thì sẽ xuống input
+
+//Middleware
+//Muốn gửi 1 biến từ middleware này sang middleware khác dùng biến locals hoặc gửi thông điệp

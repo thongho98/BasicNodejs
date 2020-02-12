@@ -13,5 +13,7 @@ module.exports.validateUser = function(req,res, next){
         });
         return;
     }
+    res.locals.success = true;
+    
     next();
 }
