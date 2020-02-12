@@ -1,13 +1,20 @@
 extends ../layouts/common
 block content
   h1 Users
-  a(href="/users/create") News
-  form(action="/users/search", method="GET")
-    input(type="text", name="q")
-    button(class="btn btn-primary") Search
-  ul
+  .d-flex.align-items-center
+    a(href="/users/create", class="btn btn-primary mb-2") New
+    form(action="/users/search", method="GET", class="ml-auto d-flex")
+      input(type="text", name="q", class="form-control")
+      button(class="btn btn-primary ml-2") Search
+  table.table
+    tr
+      th name
+      th Phone
+      th action
+
     each user in users
-      li 
-        span= user.name
-        span &nbsp;
-        a(href='/users/'+user.id) View
+      tr 
+        td= user.name
+        td= user.phone
+        td
+          a(href='/users/'+user.id, class="btn btn-light") View
