@@ -9,5 +9,7 @@ html
                 .navbar-nav
                     a.nav-item.nav-link.active(href='/') Home
                     a.nav-item.nav-link(href='/users') Users
+            if user            
+                p= user.name
         .container
             block content

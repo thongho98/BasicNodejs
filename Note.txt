@@ -25,3 +25,10 @@ https://expressjs.com/en/starter/static-files.html
 //npm install md5 --save
 //Kỹ thuật brute force
 //Giải mã md5: md5 rainbow table
+
+//Signed Cookies
+Vấn đề:
+//Người dùng có thể đăng nhập không cần tài khoản thông qua userId
+//document.Cookies = "userId=<id>"
+Vì thế cần phải hash Value Cookies
+https://expressjs.com/en/4x/api.html#req.signedCookies

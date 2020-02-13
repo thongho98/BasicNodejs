@@ -31,6 +31,8 @@ module.exports.validateLogin = function(req,res, next){
         return;
     }
     console.log(user.id);
-    res.cookie('userId',user.id);
+    res.cookie('userId',user.id,{
+        signed: true
+    });
     next();
 }
