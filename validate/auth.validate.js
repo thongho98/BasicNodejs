@@ -1,5 +1,5 @@
 var db = require('../db');
-
+var md5 = require('md5');
 module.exports.validateLogin = function(req,res, next){
     var email = req.body.email;
     var password = req.body.password;
@@ -18,7 +18,8 @@ module.exports.validateLogin = function(req,res, next){
         errors.push("User does not exits");
     }
 
-    if(user.password !== password){
+    var hashMd5 = md5(password);
+    if(user.password !== hashMd5){
         errors.push("Wrong password");
     }
 
