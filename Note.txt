@@ -32,3 +32,15 @@ Vấn đề:
 //document.Cookies = "userId=<id>"
 Vì thế cần phải hash Value Cookies
 https://expressjs.com/en/4x/api.html#req.signedCookies
+
+//Environment Variables
+console.log(process.env);
+https://github.com/motdotla/dotenv
+npm install dotenv
+
+//Trong .gitignore thêm vào
+node_modules .env để không add biến môi trường lên github
+
+//debugger
+
+
