@@ -1,18 +1,21 @@
-var db = require('../db');
+var db = require("../db");
 
 module.exports = {
-    index : function(req,res) {
-        var page = parseInt(req.query.page) || 1;
-        var perPage = 8;
-        var start = (page-1)*perPage;
-        var end = page*perPage;
+  index: function(req, res) {
+    var page = parseInt(req.query.page) || 1;
+    var perPage = 8;
+    var start = (page - 1) * perPage;
+    var end = page * perPage;
 
-        var drop = (page - 1)*perPage;
-        res.render('products/index',{
-            //products: db.get('products').value().slice(start,end)
+    var totalProduct = db.get('products').size().value();
+    var pageNumber = Math.round(totalProduct / perPage);
+    var drop = (page - 1) * perPage;
+    res.render("products/index", {
+      //products: db.get('products').value().slice(start,end)
 
-            //use Lodash
-            products: db.get('products').drop(drop).take(perPage).value()
-        });
-    }
-}
+      //use Lodash
+      products: db.get("products").drop(drop).take(perPage).value(),
+      pageNumber: pageNumber
+    });
+  }
+};

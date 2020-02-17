@@ -14,3 +14,18 @@ block content
                     h5.card-title= product.name
                     p.card-text= product.description
                     a.btn.btn-primary(href='#') Buy Now
+    
+    nav(aria-label='Page navigation example')
+        ul.pagination
+            li.page-item
+                a.page-link(href='/product?page='+ (n-1), aria-label='Previous')
+                    span(aria-hidden='true') &laquo;
+                    span.sr-only Previous
+            - var n = 1;
+            while n <= pageNumber
+                li.page-item
+                    a.page-link(href='/product?page='+ n)= n++
+            li.page-item
+                a.page-link(href='/product?page='+ (n+1), aria-label='Next')
+                    span(aria-hidden='true') &raquo;
+                    span.sr-only Next
