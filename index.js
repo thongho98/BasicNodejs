@@ -7,6 +7,9 @@ var cookieParser = require('cookie-parser');
 var userRoute = require('./routes/user.route');
 var authRoute = require('./routes/auth.route');
 var productRoute = require('./routes/product.route');
+var cartRoute = require('./routes/cart.route');
+
+var middlewareSession = require("./middlewares/session.middleware");
 
 var app = express();
 var port = 3333;
@@ -18,6 +21,7 @@ app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 app.use(cookieParser('abbbffffffffffffffffc'));
 app.use(express.static('public'));
+app.use(middlewareSession);
 
 app.get('/',function(request,reponse) {
     reponse.render('index',{
@@ -28,6 +32,7 @@ app.get('/',function(request,reponse) {
 app.use('/users',userRoute);
 app.use('/auth',authRoute);
 app.use('/product',productRoute);
+app.use('/cart',cartRoute);
 
 app.listen(port,function(){
     console.log('Server is running at port '+port);

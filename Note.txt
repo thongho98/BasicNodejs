@@ -46,3 +46,4 @@ node_modules .env để không add biến môi trường lên github
 //Multer để hỗ trợ form có file, phân tích form có file ra
 //npm install --save multer
 
+//Session (Chức năng thêm sản phẩm vào giỏ hàng)
