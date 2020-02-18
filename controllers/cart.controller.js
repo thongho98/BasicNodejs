@@ -18,5 +18,14 @@ module.exports = {
       .set("cart." + productId, count + 1)
       .write();
     res.redirect("/product");
+  },
+  index: function(req, res) {
+    var sessionId = req.signedCookies.sessionId;
+    res.render("carts/index", {
+      carts: db
+        .get("sessions")
+        .find({ id: sessionId })
+        .value()
+    });
   }
 };
