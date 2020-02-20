@@ -47,3 +47,7 @@ node_modules .env để không add biến môi trường lên github
 //npm install --save multer
 
 //Session (Chức năng thêm sản phẩm vào giỏ hàng)
+
+
+//Mongoose 
+//npm install mongoose --save
